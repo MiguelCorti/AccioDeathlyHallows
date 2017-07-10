@@ -53,5 +53,6 @@ public class Fish : MonoBehaviour {
 	void OnCollisionEnter2D ()
 	{
 		isDead = true;
+		GameControl.instance.PlayerDied ();
 	}
 }
