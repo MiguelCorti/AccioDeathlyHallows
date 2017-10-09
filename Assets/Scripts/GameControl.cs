@@ -11,7 +11,10 @@ public class GameControl : MonoBehaviour {
 	public bool gameOver = false;
 	public float scrollSpeed = -1.5f;
 
+	private int scoreCount;
 	private Animator scoreAnim;
+	private GameObject book;
+	private GameObject player;
 
 	// Use this for initialization
 	void Awake () 
@@ -22,13 +25,16 @@ public class GameControl : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
+		book = GameObject.Find ("Goal");
+		player = GameObject.Find ("Player");
 		scoreAnim = scoreBar.GetComponent<Animator> ();
+		scoreCount = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (gameOver == true && Input.GetMouseButtonDown (0)) 
+		if (gameOver == true && Input.GetKeyDown (KeyCode.X)) 
 		{
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 		}
@@ -42,10 +48,27 @@ public class GameControl : MonoBehaviour {
 		}
 
 		scoreAnim.SetTrigger ("Scores");
+		scoreCount++;
+	}
+
+	public void PlayerAttacked()
+	{
+		scoreCount = 0;
+		scoreAnim.SetTrigger ("Attack");
+		if (book.transform.position.y < player.transform.position.y + 1f && book.transform.position.y > player.transform.position.y - 1f) {
+			print ("YOU WIN!");
+			SceneManager.LoadScene ("WinScreen");
+		}
 	}
 
 	public void PlayerDied()
 	{
 		gameOver = true;
+		SceneManager.LoadScene ("EndScreen");
+	}
+
+	public int GetScoreCount()
+	{
+		return scoreCount;
 	}
 }

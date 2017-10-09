@@ -10,8 +10,9 @@ public class RepeatingBackground : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		float backgroundFixerOffset = 0.02f;
 		groundCollider = GetComponent<BoxCollider2D> ();
-		groundHorizontalLength = groundCollider.size.x;
+		groundHorizontalLength = groundCollider.size.x - backgroundFixerOffset;
 	}
 	
 	// Update is called once per frame

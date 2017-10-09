@@ -23,17 +23,24 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
-	public float upForce = 200f;
+	public float minForce;
+	public float maxForce;
+	public float acceleration;
+	public float deceleration;
 
+	private float upForce;
 	private bool isDead;
 	private Rigidbody2D rb2d;
 	private Animator anim;
+	private int maxScoreCount;
 
 	// Use this for initialization
 	void Start () {
 		isDead = false;
+		upForce = minForce;
 		rb2d = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		maxScoreCount = 8;
 	}
 
 	// Update is called once per frame
@@ -41,11 +48,27 @@ public class Character : MonoBehaviour {
 
 		if (isDead == false) {
 
-			if (Input.GetMouseButtonDown (0)) 
-			{
+			if (Input.GetKeyDown (KeyCode.X)) {
 				rb2d.velocity = Vector2.zero;
+				if (upForce < maxForce) {
+					upForce = upForce + (acceleration * Time.deltaTime);
+				}
+
 				rb2d.AddForce (new Vector2 (0, upForce));
 				anim.SetTrigger ("Flap");
+			} else {
+				upForce = upForce - (deceleration * Time.deltaTime);
+				if (upForce < minForce) {
+					upForce = minForce;
+				}
+			}
+
+			if (Input.GetKeyDown (KeyCode.V)) 
+			{
+				anim.SetTrigger ("Attack");
+				if (GameControl.instance.GetScoreCount () > maxScoreCount) {
+					GameControl.instance.PlayerAttacked ();
+				}
 			}
 		}
 	}
