@@ -1,0 +1,52 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 10.0]
+    Renderer: Intel(R) HD Graphics (ID=0x46)
+    Vendor:   Intel
+    VRAM:     880 MB
+    Driver:   8.15.10.2900
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.209 seconds
+Platform assembly: C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Miguel\Documents\Workspace\Unity\Accio Deathly Hallows\Accio Deathly Hallows_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.776901 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.854746 ms
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 539.
+Total: 0.633768 ms (FindLiveObjects: 0.090364 ms CreateObjectMapping: 0.037685 ms MarkObjects: 0.416163 ms  DeleteObjects: 0.088338 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.819855 ms
+
+Unloading 209 unused Assets to reduce memory usage. Loaded Objects now: 343.
+Total: 1.000089 ms (FindLiveObjects: 0.088338 ms CreateObjectMapping: 0.049437 ms MarkObjects: 0.301485 ms  DeleteObjects: 0.559207 ms)
+
+Parent of RectTransform is being set with parent property. Consider using the SetParent method instead, with the worldPositionStays argument set to false. This will retain local orientation and scale rather than world orientation and scale, which can prevent common UI scaling issues.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.893515 ms
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 539.
+Total: 0.790589 ms (FindLiveObjects: 0.091580 ms CreateObjectMapping: 0.043764 ms MarkObjects: 0.412516 ms  DeleteObjects: 0.241107 ms)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: d70 -> priority: 1 
+  Thread -> id: 1770 -> priority: 1 

@@ -15,6 +15,7 @@ public class GameControl : MonoBehaviour {
 	private Animator scoreAnim;
 	private GameObject book;
 	private GameObject player;
+	private GameObject pauseImage;
 	private bool gameIsPaused = false;
 	private bool canPause = false;
 
@@ -27,6 +28,8 @@ public class GameControl : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
+		pauseImage = GameObject.Find ("Pause Button");
+		pauseImage.SetActive (false);
 		book = GameObject.Find ("Goal");
 		player = GameObject.Find ("Player");
 		scoreAnim = scoreBar.GetComponent<Animator> ();
@@ -39,14 +42,20 @@ public class GameControl : MonoBehaviour {
 		if (canPause) {
 			if (Input.GetKeyDown (KeyCode.P)) {
 				if (gameIsPaused) {
+					pauseImage.SetActive (false);
 					PauseGame (false);
 					gameIsPaused = false;
 				} else {
+					pauseImage.SetActive (true);
 					PauseGame (true);
 					gameIsPaused = true;
 				}
 
 			}
+		}
+
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit ();
 		}
 	}
 
