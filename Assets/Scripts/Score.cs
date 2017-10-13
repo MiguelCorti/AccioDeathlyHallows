@@ -6,11 +6,6 @@ public class Score : MonoBehaviour {
 
 	public Camera cam;
 
-	void Start()
-	{
-		//cam = GetComponent<Camera> ();
-	}
-
 	void Update()
 	{
 		Vector3 screenPos = cam.WorldToScreenPoint(transform.position);

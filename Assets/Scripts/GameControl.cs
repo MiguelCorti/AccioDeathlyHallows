@@ -15,6 +15,8 @@ public class GameControl : MonoBehaviour {
 	private Animator scoreAnim;
 	private GameObject book;
 	private GameObject player;
+	private bool gameIsPaused = false;
+	private bool canPause = false;
 
 	// Use this for initialization
 	void Awake () 
@@ -34,10 +36,31 @@ public class GameControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (gameOver == true && Input.GetKeyDown (KeyCode.X)) 
-		{
-			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		if (canPause) {
+			if (Input.GetKeyDown (KeyCode.P)) {
+				if (gameIsPaused) {
+					PauseGame (false);
+					gameIsPaused = false;
+				} else {
+					PauseGame (true);
+					gameIsPaused = true;
+				}
+
+			}
 		}
+	}
+
+	public void SetCanPause(bool state)
+	{
+		canPause = state;
+	}
+
+	public void PauseGame(bool state)
+	{
+		if (state)
+			Time.timeScale = 0;
+		else
+			Time.timeScale = 1;
 	}
 
 	public void PlayerScored()
